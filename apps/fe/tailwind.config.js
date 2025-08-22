@@ -10,6 +10,7 @@ module.exports = {
     './app.vue',
     './plugins/**/*.{js,ts}'
   ],
+  darkMode: ['class', '[data-theme="inequality_dark"]'],
   theme: { extend: {} },
   plugins: [require('daisyui')],
   daisyui: {

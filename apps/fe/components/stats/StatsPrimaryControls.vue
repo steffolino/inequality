@@ -1,6 +1,6 @@
 <template>
-  <div class="sticky top-14 z-20 border-b border-base-200 bg-base-100/95 backdrop-blur">
-    <div class="px-4 py-2 flex items-center gap-2">
+  <div class="top-14 z-20 border-b border-base-200 bg-base-100/95 backdrop-blur">
+    <div class="px-4 py-2 max-w-6xl mx-auto flex items-center gap-2">
       <select v-model="state.timeframe" class="select select-sm select-bordered">
         <option>1990-2005</option>
         <option>2000-2025</option>

@@ -1,5 +1,5 @@
 <template>
-  <section class="px-4 py-4 space-y-3 border-t border-base-200">
+  <section class="px-4 py-4 max-w-6xl mx-auto space-y-3 border-t border-base-200">
     <h2 class="text-lg font-semibold">General Outcome</h2>
     <p class="text-xl font-semibold">Inequality ↓ {{ inequalityDrop.toFixed(1) }}%</p>
     <div class="grid grid-cols-3 gap-2">

@@ -12,11 +12,11 @@ type HydrationStrategies = {
 }
 type LazyComponent<T> = (T & DefineComponent<HydrationStrategies, {}, {}, {}, {}, {}, {}, { hydrated: () => void }>)
 interface _GlobalComponents {
-      'StatsCard': typeof import("../components/StatsCard.vue")['default']
-    'ChartsVegaLite': typeof import("../components/charts/VegaLite.vue")['default']
+      'ChartsVegaLite': typeof import("../components/charts/VegaLite.vue")['default']
     'StatsFiltersDrawer': typeof import("../components/stats/FiltersDrawer.vue")['default']
     'StatsOutcomeCard': typeof import("../components/stats/OutcomeCard.vue")['default']
     'StatsPersonalEffectsCard': typeof import("../components/stats/PersonalEffectsCard.vue")['default']
+    'StatsCard': typeof import("../components/stats/StatsCard.vue")['default']
     'StatsPrimaryControls': typeof import("../components/stats/StatsPrimaryControls.vue")['default']
     'UiBottomTabBar': typeof import("../components/ui/BottomTabBar.vue")['default']
     'UiDesktopNavBar': typeof import("../components/ui/DesktopNavBar.vue")['default']
@@ -47,11 +47,11 @@ interface _GlobalComponents {
     'Body': typeof import("../node_modules/.pnpm/nuxt@3.18.1_@netlify+blobs@_3061ad7200f12ee0c00e8e25155178c8/node_modules/nuxt/dist/head/runtime/components")['Body']
     'NuxtIsland': typeof import("../node_modules/.pnpm/nuxt@3.18.1_@netlify+blobs@_3061ad7200f12ee0c00e8e25155178c8/node_modules/nuxt/dist/app/components/nuxt-island")['default']
     'NuxtRouteAnnouncer': typeof import("../node_modules/.pnpm/nuxt@3.18.1_@netlify+blobs@_3061ad7200f12ee0c00e8e25155178c8/node_modules/nuxt/dist/app/components/server-placeholder")['default']
-      'LazyStatsCard': LazyComponent<typeof import("../components/StatsCard.vue")['default']>
-    'LazyChartsVegaLite': LazyComponent<typeof import("../components/charts/VegaLite.vue")['default']>
+      'LazyChartsVegaLite': LazyComponent<typeof import("../components/charts/VegaLite.vue")['default']>
     'LazyStatsFiltersDrawer': LazyComponent<typeof import("../components/stats/FiltersDrawer.vue")['default']>
     'LazyStatsOutcomeCard': LazyComponent<typeof import("../components/stats/OutcomeCard.vue")['default']>
     'LazyStatsPersonalEffectsCard': LazyComponent<typeof import("../components/stats/PersonalEffectsCard.vue")['default']>
+    'LazyStatsCard': LazyComponent<typeof import("../components/stats/StatsCard.vue")['default']>
     'LazyStatsPrimaryControls': LazyComponent<typeof import("../components/stats/StatsPrimaryControls.vue")['default']>
     'LazyUiBottomTabBar': LazyComponent<typeof import("../components/ui/BottomTabBar.vue")['default']>
     'LazyUiDesktopNavBar': LazyComponent<typeof import("../components/ui/DesktopNavBar.vue")['default']>
@@ -88,11 +88,11 @@ declare module 'vue' {
   export interface GlobalComponents extends _GlobalComponents { }
 }
 
-export const StatsCard: typeof import("../components/StatsCard.vue")['default']
 export const ChartsVegaLite: typeof import("../components/charts/VegaLite.vue")['default']
 export const StatsFiltersDrawer: typeof import("../components/stats/FiltersDrawer.vue")['default']
 export const StatsOutcomeCard: typeof import("../components/stats/OutcomeCard.vue")['default']
 export const StatsPersonalEffectsCard: typeof import("../components/stats/PersonalEffectsCard.vue")['default']
+export const StatsCard: typeof import("../components/stats/StatsCard.vue")['default']
 export const StatsPrimaryControls: typeof import("../components/stats/StatsPrimaryControls.vue")['default']
 export const UiBottomTabBar: typeof import("../components/ui/BottomTabBar.vue")['default']
 export const UiDesktopNavBar: typeof import("../components/ui/DesktopNavBar.vue")['default']
@@ -123,11 +123,11 @@ export const Html: typeof import("../node_modules/.pnpm/nuxt@3.18.1_@netlify+blo
 export const Body: typeof import("../node_modules/.pnpm/nuxt@3.18.1_@netlify+blobs@_3061ad7200f12ee0c00e8e25155178c8/node_modules/nuxt/dist/head/runtime/components")['Body']
 export const NuxtIsland: typeof import("../node_modules/.pnpm/nuxt@3.18.1_@netlify+blobs@_3061ad7200f12ee0c00e8e25155178c8/node_modules/nuxt/dist/app/components/nuxt-island")['default']
 export const NuxtRouteAnnouncer: typeof import("../node_modules/.pnpm/nuxt@3.18.1_@netlify+blobs@_3061ad7200f12ee0c00e8e25155178c8/node_modules/nuxt/dist/app/components/server-placeholder")['default']
-export const LazyStatsCard: LazyComponent<typeof import("../components/StatsCard.vue")['default']>
 export const LazyChartsVegaLite: LazyComponent<typeof import("../components/charts/VegaLite.vue")['default']>
 export const LazyStatsFiltersDrawer: LazyComponent<typeof import("../components/stats/FiltersDrawer.vue")['default']>
 export const LazyStatsOutcomeCard: LazyComponent<typeof import("../components/stats/OutcomeCard.vue")['default']>
 export const LazyStatsPersonalEffectsCard: LazyComponent<typeof import("../components/stats/PersonalEffectsCard.vue")['default']>
+export const LazyStatsCard: LazyComponent<typeof import("../components/stats/StatsCard.vue")['default']>
 export const LazyStatsPrimaryControls: LazyComponent<typeof import("../components/stats/StatsPrimaryControls.vue")['default']>
 export const LazyUiBottomTabBar: LazyComponent<typeof import("../components/ui/BottomTabBar.vue")['default']>
 export const LazyUiDesktopNavBar: LazyComponent<typeof import("../components/ui/DesktopNavBar.vue")['default']>

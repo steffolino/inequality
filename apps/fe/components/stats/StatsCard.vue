@@ -1,5 +1,5 @@
 <template>
-  <section class="p-5 rounded-2xl bg-base-100/70 backdrop-blur shadow-sm ring-1 ring-base-300/50 space-y-4 transition-all hover:shadow-md hover:ring-base-300">
+  <section class="p-5 rounded-2xl max-w-6xl mx-auto bg-base-100/70 backdrop-blur shadow-sm ring-1 ring-base-300/50 space-y-4 transition-all hover:shadow-md hover:ring-base-300">
     <header class="flex items-end justify-between gap-3">
       <div>
         <h2 class="text-sm font-medium uppercase tracking-wide text-base-content/70">Statistics</h2>

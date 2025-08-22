@@ -15,3 +15,16 @@ wrangler.log
 
 # OS
 .DS_Store
+
+# Logs
+*.log
+
+# Build outputs
+dist/
+build/
+# Coverage
+coverage/
+# Temporary files
+*.tmp
+*.temp
+*.bak

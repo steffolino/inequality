@@ -1,5 +1,5 @@
 <template>
-  <header class="sticky top-0 z-40 bg-base-100/90 backdrop-blur supports-[backdrop-filter]:bg-base-100/70 border-b border-base-200" role="banner">
+  <header class="sticky top-0 z-40 bg-base-100/90 max-w-6xl backdrop-blur supports-[backdrop-filter]:bg-base-100/70 border-b border-base-200" role="banner">
     <div class="flex items-center gap-2 px-4 h-14">
       <button type="button" class="btn btn-ghost btn-sm px-2" aria-label="Open menu" @click="$emit('open-nav')">
         <Icon name="tabler:menu-2" class="text-xl" />
