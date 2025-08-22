@@ -4,5 +4,8 @@
     "dev:proxy": "npm --prefix apps/db-proxy run dev",
     "dev:fe": "npm --prefix apps/fe run dev",
     "dev": "concurrently -n PROXY,FE -c magenta,cyan \"npm:dev:proxy\" \"npm:dev:fe\""
+  },
+  "devDependencies": {
+    "wrangler": "^4.32.0"
   }
 }
