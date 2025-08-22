@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "db:seed:local": "npx wrangler d1 execute inequality-edge-db --local --config apps/db-proxy/wrangler.toml --file apps/api-python/d1/schema.sql",
+    "dev:proxy": "npm --prefix apps/db-proxy run dev",
+    "dev:fe": "npm --prefix apps/fe run dev",
+    "dev": "concurrently -n PROXY,FE -c magenta,cyan \"npm:dev:proxy\" \"npm:dev:fe\""
+  }
+}

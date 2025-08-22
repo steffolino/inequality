@@ -1,0 +1,12 @@
+name = "inequality-edge-api"
+main = "src/index.ts"
+compatibility_date = "2025-08-22"
+
+[vars]
+SIM_ALPHA = "0.04"
+SIM_BETA  = "0.005"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "inequality-edge-db"
+database_id = "DATABASE_ID_HERE"

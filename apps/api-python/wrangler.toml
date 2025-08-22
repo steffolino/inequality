@@ -1,0 +1,20 @@
+name = "ineq-api-python"
+main = "src/worker.py"
+compatibility_date = "2025-08-01"
+compatibility_flags = ["python_workers"]
+
+# --- D1 binding ---
+[[d1_databases]]
+binding = "DB"
+database_name = "ineq-db"          # <-- replace if your DB name differs
+database_id = "REPLACE_WITH_D1_ID" # <-- put your actual D1 database_id
+
+# --- R2 bucket ---
+[[r2_buckets]]
+binding = "EXPORTS"
+bucket_name = "ineq-exports"       # <-- replace with your R2 bucket name
+
+# --- Service binding to the TS db-proxy Worker ---
+[[services]]
+binding = "DBPROXY"
+service = "ineq-db-proxy"

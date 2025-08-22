@@ -1,0 +1,17 @@
+# Node
+node_modules
+pnpm-lock.yaml
+yarn.lock
+package-lock.json
+
+# Python
+.venv
+.pywrangler
+__pycache__/
+
+# Wrangler local data
+.dev.vars
+wrangler.log
+
+# OS
+.DS_Store

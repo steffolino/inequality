@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { --bottom-bar-h: 56px; }
+main { padding-bottom: calc(var(--bottom-bar-h) + env(safe-area-inset-bottom)); }
+@media (min-width: 768px) {
+  main { padding-bottom: 0; }
+}

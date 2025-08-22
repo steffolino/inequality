@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+      <rect width="512" height="512" fill="#000000"/>
+      <circle cx="256.0" cy="256.0" r="246.0" stroke="#FFFFFF" stroke-width="20" fill="none"/>
+      <text x="50%" y="55%" text-anchor="middle" font-size="256" font-family="Arial, sans-serif"
+            fill="#FFFFFF" dominant-baseline="middle">≠</text>
+    </svg>

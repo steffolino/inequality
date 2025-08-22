@@ -1,0 +1,22 @@
+{
+  "name": "inequality-fe",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview"
+  },
+  "dependencies": {
+    "@nuxt/image": "^1.11.0",
+    "@nuxtjs/tailwindcss": "^6.12.1",
+    "daisyui": "^4.12.14",
+    "nuxt": "^3.12.4",
+    "nuxt-icon": "^0.6.9",
+    "vega": "^5.30.0",
+    "vega-embed": "^6.26.0",
+    "vega-lite": "^5.20.1"
+  }
+}

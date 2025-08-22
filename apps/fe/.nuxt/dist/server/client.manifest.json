@@ -1,0 +1,18 @@
+{
+  "@vite/client": {
+    "prefetch": true,
+    "isEntry": true,
+    "file": "@vite/client",
+    "css": [],
+    "module": true,
+    "resourceType": "script"
+  },
+  "C:/Users/StretzS/inequality/apps/fe/node_modules/.pnpm/nuxt@3.18.1_@netlify+blobs@_3061ad7200f12ee0c00e8e25155178c8/node_modules/nuxt/dist/app/entry.js": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "isEntry": true,
+    "file": "C:/Users/StretzS/inequality/apps/fe/node_modules/.pnpm/nuxt@3.18.1_@netlify+blobs@_3061ad7200f12ee0c00e8e25155178c8/node_modules/nuxt/dist/app/entry.js"
+  }
+}
