@@ -1,0 +1,8 @@
+:root {
+  /* Map to theme tokens */
+  --cc-bg: color-mix(in oklab, var(--b1) 90%, transparent);
+  --cc-text: var(--bc);
+  --cc-accent: var(--p);
+  --cc-border: color-mix(in oklab, var(--b3) 60%, transparent);
+  --cc-shadow: color-mix(in oklab, var(--p) 30%, transparent);
+}

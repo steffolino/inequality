@@ -9,7 +9,7 @@ import { createRenderer, getRequestDependencies, getPreloadLinks, getPrefetchLin
 import { parseURL, withoutBase, joinURL, getQuery, withQuery, withTrailingSlash, decodePath, withLeadingSlash, withoutTrailingSlash, joinRelativeURL } from 'file://C:/Users/StretzS/inequality/apps/fe/node_modules/.pnpm/ufo@1.6.1/node_modules/ufo/dist/index.mjs';
 import { renderToString } from 'file://C:/Users/StretzS/inequality/apps/fe/node_modules/.pnpm/vue@3.5.19_typescript@5.9.2/node_modules/vue/server-renderer/index.mjs';
 import { klona } from 'file://C:/Users/StretzS/inequality/apps/fe/node_modules/.pnpm/klona@2.0.6/node_modules/klona/dist/index.mjs';
-import defu, { defuFn } from 'file://C:/Users/StretzS/inequality/apps/fe/node_modules/.pnpm/defu@6.1.4/node_modules/defu/dist/defu.mjs';
+import { defuFn } from 'file://C:/Users/StretzS/inequality/node_modules/defu/dist/defu.mjs';
 import destr, { destr as destr$1 } from 'file://C:/Users/StretzS/inequality/apps/fe/node_modules/.pnpm/destr@2.0.5/node_modules/destr/dist/index.mjs';
 import { snakeCase } from 'file://C:/Users/StretzS/inequality/apps/fe/node_modules/.pnpm/scule@1.3.0/node_modules/scule/dist/index.mjs';
 import { createHead as createHead$1, propsToString, renderSSRHead } from 'file://C:/Users/StretzS/inequality/apps/fe/node_modules/.pnpm/unhead@2.0.14/node_modules/unhead/dist/server.mjs';
@@ -19,9 +19,10 @@ import { DeprecationsPlugin, PromisesPlugin, TemplateParamsPlugin, AliasSortingP
 import { createHooks } from 'file://C:/Users/StretzS/inequality/apps/fe/node_modules/.pnpm/hookable@5.5.3/node_modules/hookable/dist/index.mjs';
 import { createFetch, Headers as Headers$1 } from 'file://C:/Users/StretzS/inequality/apps/fe/node_modules/.pnpm/ofetch@1.4.1/node_modules/ofetch/dist/node.mjs';
 import { fetchNodeRequestHandler, callNodeRequestHandler } from 'file://C:/Users/StretzS/inequality/apps/fe/node_modules/.pnpm/node-mock-http@1.0.2/node_modules/node-mock-http/dist/index.mjs';
-import { createStorage, prefixStorage } from 'file://C:/Users/StretzS/inequality/apps/fe/node_modules/.pnpm/unstorage@1.16.1_@netlify+b_2b6568ee59a90fc4e8881087341be639/node_modules/unstorage/dist/index.mjs';
-import unstorage_47drivers_47fs from 'file://C:/Users/StretzS/inequality/apps/fe/node_modules/.pnpm/unstorage@1.16.1_@netlify+b_2b6568ee59a90fc4e8881087341be639/node_modules/unstorage/drivers/fs.mjs';
+import { createStorage, prefixStorage } from 'file://C:/Users/StretzS/inequality/apps/fe/node_modules/.pnpm/unstorage@1.16.1_@netlify+blobs@9.1.2_db0@0.3.2_ioredis@5.7.0/node_modules/unstorage/dist/index.mjs';
+import unstorage_47drivers_47fs from 'file://C:/Users/StretzS/inequality/apps/fe/node_modules/.pnpm/unstorage@1.16.1_@netlify+blobs@9.1.2_db0@0.3.2_ioredis@5.7.0/node_modules/unstorage/drivers/fs.mjs';
 import { digest } from 'file://C:/Users/StretzS/inequality/apps/fe/node_modules/.pnpm/ohash@2.0.11/node_modules/ohash/dist/index.mjs';
+import defu from 'file://C:/Users/StretzS/inequality/apps/fe/node_modules/.pnpm/defu@6.1.4/node_modules/defu/dist/defu.mjs';
 import { toRouteMatcher, createRouter } from 'file://C:/Users/StretzS/inequality/apps/fe/node_modules/.pnpm/radix3@1.1.2/node_modules/radix3/dist/index.mjs';
 import { readFile } from 'node:fs/promises';
 import consola, { consola as consola$1 } from 'file://C:/Users/StretzS/inequality/apps/fe/node_modules/.pnpm/consola@3.4.2/node_modules/consola/dist/index.mjs';
@@ -33,9 +34,10 @@ import { getContext } from 'file://C:/Users/StretzS/inequality/apps/fe/node_modu
 import { captureRawStackTrace, parseRawStackTrace } from 'file://C:/Users/StretzS/inequality/apps/fe/node_modules/.pnpm/errx@0.1.0/node_modules/errx/dist/index.js';
 import { promises } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { dirname as dirname$1, resolve as resolve$1, isAbsolute } from 'file://C:/Users/StretzS/inequality/apps/fe/node_modules/.pnpm/pathe@2.0.3/node_modules/pathe/dist/index.mjs';
+import { dirname as dirname$1, resolve as resolve$1 } from 'file://C:/Users/StretzS/inequality/node_modules/pathe/dist/index.mjs';
 import { walkResolver } from 'file://C:/Users/StretzS/inequality/apps/fe/node_modules/.pnpm/unhead@2.0.14/node_modules/unhead/dist/utils.mjs';
 import { ipxFSStorage, ipxHttpStorage, createIPX, createIPXH3Handler } from 'file://C:/Users/StretzS/inequality/apps/fe/node_modules/.pnpm/ipx@2.1.1_@netlify+blobs@9.1.2_db0@0.3.2_ioredis@5.7.0/node_modules/ipx/dist/index.mjs';
+import { isAbsolute } from 'file://C:/Users/StretzS/inequality/apps/fe/node_modules/.pnpm/pathe@2.0.3/node_modules/pathe/dist/index.mjs';
 
 const serverAssets = [{"baseName":"server","dir":"C:/Users/StretzS/inequality/apps/fe/server/assets"}];
 
@@ -637,15 +639,16 @@ const _inlineRuntimeConfig = {
         "cache": false
       },
       "/": {
-        "prerender": true
+        "prerender": true,
+        "ssr": false
       },
       "/stats": {
         "ssr": false
       },
-      "/profile": {
+      "/explore": {
         "ssr": false
       },
-      "/about": {
+      "/profile": {
         "ssr": false
       },
       "/privacy": {
@@ -671,7 +674,7 @@ const _inlineRuntimeConfig = {
   },
   "public": {
     "appName": "Inequality in the BRD",
-    "apiBase": "http://127.0.0.1:8787"
+    "apiBase": "https://inequality-edge-db-proxy.inequality.workers.dev"
   },
   "ipx": {
     "baseURL": "/_ipx",
@@ -1057,7 +1060,7 @@ const devReducers = {
   URL: (data) => data instanceof URL ? data.toString() : void 0
 };
 const asyncContext = getContext("nuxt-dev", { asyncContext: true, AsyncLocalStorage });
-const _sfRRfTyLczXEQZW5Spj_uJe7Tor975PFTVdpFTpKvZ4 = (nitroApp) => {
+const _XBQWOsqTNYDlc0s7V_7jEAc1ZUGwxO10jvTbmk0O554 = (nitroApp) => {
   const handler = nitroApp.h3App.handler;
   nitroApp.h3App.handler = (event) => {
     return asyncContext.callAsync({ logs: [], event }, () => handler(event));
@@ -1127,7 +1130,7 @@ function onConsoleLog(callback) {
 }
 
 const plugins = [
-  _sfRRfTyLczXEQZW5Spj_uJe7Tor975PFTVdpFTpKvZ4
+  _XBQWOsqTNYDlc0s7V_7jEAc1ZUGwxO10jvTbmk0O554
 ];
 
 const assets = {};
@@ -1613,7 +1616,7 @@ async function runTask(name, {
   }
 }
 
-const _yIk_uv = lazyEventHandler(() => {
+const _hW7HR5 = lazyEventHandler(() => {
   const opts = useRuntimeConfig().ipx || {};
   const fsDir = opts?.fs?.dir ? (Array.isArray(opts.fs.dir) ? opts.fs.dir : [opts.fs.dir]).map((dir) => isAbsolute(dir) ? dir : fileURLToPath(new URL(dir, globalThis._importMeta_.url))) : void 0;
   const fsStorage = opts.fs?.dir ? ipxFSStorage({ ...opts.fs, dir: fsDir }) : void 0;
@@ -1631,14 +1634,20 @@ const _yIk_uv = lazyEventHandler(() => {
   return useBase(opts.baseURL, ipxHandler);
 });
 
-const _lazy_IDMYHr = () => Promise.resolve().then(function () { return renderer$1; });
+const _lazy_dR7PfK = () => Promise.resolve().then(function () { return _dataset__get$1; });
+const _lazy_o9aagw = () => Promise.resolve().then(function () { return _series__get$3; });
+const _lazy_6vFnY0 = () => Promise.resolve().then(function () { return _series__get$1; });
+const _lazy_uS8u79 = () => Promise.resolve().then(function () { return renderer$1; });
 
 const handlers = [
   { route: '', handler: _f7yyFs, lazy: false, middleware: true, method: undefined },
-  { route: '/__nuxt_error', handler: _lazy_IDMYHr, lazy: true, middleware: false, method: undefined },
+  { route: '/api/eurostat/:dataset', handler: _lazy_dR7PfK, lazy: true, middleware: false, method: "get" },
+  { route: '/api/owid/:series', handler: _lazy_o9aagw, lazy: true, middleware: false, method: "get" },
+  { route: '/api/wid/:series', handler: _lazy_6vFnY0, lazy: true, middleware: false, method: "get" },
+  { route: '/__nuxt_error', handler: _lazy_uS8u79, lazy: true, middleware: false, method: undefined },
   { route: '/__nuxt_island/**', handler: _SxA8c9, lazy: false, middleware: false, method: undefined },
-  { route: '/_ipx/**', handler: _yIk_uv, lazy: false, middleware: false, method: undefined },
-  { route: '/**', handler: _lazy_IDMYHr, lazy: true, middleware: false, method: undefined }
+  { route: '/_ipx/**', handler: _hW7HR5, lazy: false, middleware: false, method: undefined },
+  { route: '/**', handler: _lazy_uS8u79, lazy: true, middleware: false, method: undefined }
 ];
 
 function createNitroApp() {
@@ -1888,6 +1897,156 @@ const styles = {};
 const styles$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   __proto__: null,
   default: styles
+}, Symbol.toStringTag, { value: 'Module' }));
+
+function parseEurostat(json) {
+  var _a, _b, _c;
+  if (!(json == null ? void 0 : json.value)) return [];
+  const dimIds = json.id;
+  const size = json.size;
+  const dims = json.dimension;
+  const dimCats = {};
+  for (const dim of dimIds) {
+    const cat = (_c = (_b = (_a = dims[dim]) == null ? void 0 : _a.category) == null ? void 0 : _b.index) != null ? _c : {};
+    const labels = Object.entries(cat).sort((a, b) => a[1] - b[1]).map(([k]) => k);
+    dimCats[dim] = labels;
+  }
+  const rows = [];
+  for (const [obsKey, val] of Object.entries(json.value)) {
+    let idx = Number(obsKey);
+    const coords = {};
+    for (let d = dimIds.length - 1; d >= 0; d--) {
+      const sizeD = size[d];
+      const pos = idx % sizeD;
+      idx = Math.floor(idx / sizeD);
+      const dimName = dimIds[d];
+      coords[dimName] = dimCats[dimName][pos];
+    }
+    rows.push({
+      region: coords.geo,
+      year: Number(coords.time),
+      age: coords.age,
+      stat: coords.statinfo,
+      value: Number(val)
+    });
+  }
+  return rows;
+}
+const _dataset__get = defineEventHandler(async (event) => {
+  var _a, _b, _c;
+  const dataset = getRouterParam(event, "dataset");
+  const q = getQuery$1(event);
+  if (!dataset) {
+    throw createError({ statusCode: 400, statusMessage: "Missing dataset param" });
+  }
+  const regions = String((_a = q.regions) != null ? _a : "DE,EU27_2020").split(",");
+  const yearStart = Number((_b = q.yearStart) != null ? _b : 2014);
+  const yearEnd = Number((_c = q.yearEnd) != null ? _c : 2024);
+  const rows = [];
+  for (let y = yearStart; y <= yearEnd; y++) {
+    const params = {
+      geo: regions.join(","),
+      time: String(y),
+      freq: "A"
+    };
+    if (dataset.toLowerCase() === "ilc_di12") {
+      params["age"] = "TOTAL";
+      params["statinfo"] = "GINI_HND";
+    }
+    const url = `https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/${dataset}?` + new URLSearchParams(params).toString();
+    try {
+      const json = await $fetch(url);
+      const parsed = parseEurostat(json);
+      rows.push(...parsed);
+    } catch (err) {
+      console.warn(`Eurostat fetch failed for ${dataset} ${y}`, (err == null ? void 0 : err.statusMessage) || err);
+      continue;
+    }
+  }
+  return { rows };
+});
+
+const _dataset__get$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: _dataset__get
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const _series__get$2 = defineEventHandler(async (event) => {
+  var _a, _b, _c, _d, _e, _f;
+  const series = getRouterParam(event, "series");
+  const q = getQuery$1(event);
+  const country = String((_a = q.country) != null ? _a : "DEU");
+  if (series === "wid_palma") {
+    const owidUrl = "https://ourworldindata.org/grapher/palma-ratio-s90s40-ratio.json";
+    const owid = await $fetch(owidUrl);
+    const data = (_b = owid == null ? void 0 : owid.data) != null ? _b : [];
+    const countryName = country === "DEU" ? "Germany" : country;
+    const rows = data.filter((r) => r.entity === countryName);
+    return { rows, url: owidUrl };
+  }
+  const base = "https://wid.world/data/series";
+  const params = new URLSearchParams({
+    series,
+    area: country,
+    ...q.yearStart ? { year_start: String(q.yearStart) } : {},
+    ...q.yearEnd ? { year_end: String(q.yearEnd) } : {}
+  });
+  const url = `${base}?${params.toString()}`;
+  try {
+    const data = await $fetch(url);
+    return { rows: (_d = (_c = data == null ? void 0 : data.value) != null ? _c : data == null ? void 0 : data.data) != null ? _d : data, url };
+  } catch (e) {
+    throw createError({
+      statusCode: 404,
+      statusMessage: `WID error for ${series}`,
+      data: (_f = (_e = e == null ? void 0 : e.data) != null ? _e : e == null ? void 0 : e.message) != null ? _f : null
+    });
+  }
+});
+
+const _series__get$3 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: _series__get$2
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const _series__get = defineEventHandler(async (event) => {
+  var _a, _b, _c, _d, _e;
+  const series = getRouterParam(event, "series");
+  const q = getQuery$1(event);
+  const country = String((_a = q.country) != null ? _a : "DEU");
+  if (series === "wid_palma") {
+    const csvUrl = "https://ourworldindata.org/grapher/palma-ratio-s90s40-ratio.csv";
+    const csvText = await $fetch(csvUrl, { responseType: "text" });
+    const [headerLine, ...lines] = csvText.split("\n").filter(Boolean);
+    const headers = headerLine.split(",");
+    const entityIdx = headers.indexOf("Entity");
+    const yearIdx = headers.indexOf("Year");
+    const valueIdx = headers.findIndex((h) => h.includes("Palma"));
+    const rows = lines.map((line) => line.split(",")).filter(
+      (cols) => country === "DEU" ? cols[entityIdx] === "Germany" : cols[entityIdx] === country
+    ).map((cols) => ({
+      year: Number(cols[yearIdx]),
+      value: Number(cols[valueIdx])
+    }));
+    return { rows, url: csvUrl };
+  }
+  const base = "https://wid.world/data/series";
+  const url = `${base}?series=${series}&area=${country}`;
+  try {
+    const json = await $fetch(url);
+    return { rows: (_c = (_b = json == null ? void 0 : json.value) != null ? _b : json == null ? void 0 : json.data) != null ? _c : json, url };
+  } catch (e) {
+    throw createError({
+      statusCode: 404,
+      statusMessage: `WID error for ${series}`,
+      data: (_e = (_d = e == null ? void 0 : e.data) != null ? _d : e == null ? void 0 : e.message) != null ? _e : null
+    });
+  }
+});
+
+const _series__get$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: _series__get
 }, Symbol.toStringTag, { value: 'Module' }));
 
 function renderPayloadResponse(ssrContext) {

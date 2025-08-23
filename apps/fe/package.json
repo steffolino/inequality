@@ -12,6 +12,7 @@
   "dependencies": {
     "@nuxt/image": "^1.11.0",
     "@nuxtjs/tailwindcss": "^6.12.1",
+    "csv-parse": "^6.1.0",
     "daisyui": "^4.12.14",
     "nuxt": "^3.12.4",
     "nuxt-icon": "^0.6.9",

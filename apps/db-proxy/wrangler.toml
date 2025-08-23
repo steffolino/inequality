@@ -1,6 +1,7 @@
-name = "inequality-edge-api"
+name = "inequality-edge-db-proxy"
 main = "src/index.ts"
 compatibility_date = "2025-08-22"
+account_id = "5f9005a65d4848073ca40a794d0d30f4"
 
 [vars]
 SIM_ALPHA = "0.04"
@@ -9,4 +10,5 @@ SIM_BETA  = "0.005"
 [[d1_databases]]
 binding = "DB"
 database_name = "inequality-edge-db"
-database_id = "DATABASE_ID_HERE"
+# fill in database_id after the create step below
+database_id = "f3783d90-5ace-4952-88dc-238ce63753ad"

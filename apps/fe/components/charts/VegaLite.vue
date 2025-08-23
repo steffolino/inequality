@@ -23,8 +23,6 @@ function deepClone(v: any) {
 
 function sanitizeSpec(inputSpec: any) {
   const spec = deepClone(inputSpec)
-
-  // Remove root params (selections) to avoid duplicate signals
   if (Array.isArray(spec.params)) delete spec.params
 
   const stripTransforms = (obj: any) => {
@@ -81,7 +79,6 @@ function mix(rgb: string, other: string, t: number) {
   return `rgb(${mixc(a.r, b.r)}, ${mixc(a.g, b.g)}, ${mixc(a.b, b.b)})`
 }
 function lightenForDark(rgb: string, t = 0.25) {
-  // Pull colors toward white so they pop on dark bg
   return mix(rgb, 'rgb(255,255,255)', t)
 }
 function probeColorFromVar(rootEl: HTMLElement, cssVar: string) {
@@ -109,13 +106,9 @@ function getRelativeLuminance(rgb: string) {
 function getThemePalette(rootEl: HTMLElement) {
   const cs = getComputedStyle(rootEl)
   const textColor = cs.color || 'rgb(75,85,99)'
-
-  // Probe base background to decide dark vs light
-  // DaisyUI base background is --b1
   const baseBg = probeColorFromVar(rootEl, '--b1') || 'rgb(255,255,255)'
   const isDark = getRelativeLuminance(baseBg) < 0.45
 
-  // DaisyUI semantic palette hooks
   let palette = [
     probeColorFromVar(rootEl, '--p'),
     probeColorFromVar(rootEl, '--s'),
@@ -127,7 +120,6 @@ function getThemePalette(rootEl: HTMLElement) {
   ].filter(Boolean) as string[]
 
   if (isDark && palette.length) {
-    // brighten palette for dark mode
     palette = palette.map(c => lightenForDark(c, 0.28))
   }
 
@@ -150,7 +142,6 @@ function applyThemeToSpec(spec: any, rootEl: HTMLElement) {
   themed.config = themed.config || {}
   themed.config.background = 'transparent'
 
-  // Only modify when dark mode is detected
   if (theme.isDark) {
     const axisCfg = { ...(themed.config.axis || {}) }
     axisCfg.labelColor = withAlpha(theme.textColor, 0.9)
@@ -170,7 +161,6 @@ function applyThemeToSpec(spec: any, rootEl: HTMLElement) {
     titleCfg.color = withAlpha(theme.textColor, 0.95)
     themed.config.title = titleCfg
 
-    // Brighter KPIs/marks
     themed.config.line = { ...(themed.config.line || {}), strokeWidth: 2.4 }
     themed.config.point = { ...(themed.config.point || {}), size: 70, filled: true }
     themed.config.text = { ...(themed.config.text || {}), fill: withAlpha(theme.textColor, 0.95) }
@@ -184,10 +174,14 @@ function applyThemeToSpec(spec: any, rootEl: HTMLElement) {
   return themed
 }
 
-
 async function render() {
   const token = ++renderToken
   try {
+    if (!props.spec) {
+      if (el.value) el.value.innerHTML = ''
+      return
+    }
+
     if (view) {
       try { view.finalize() } catch {}
       view = null
@@ -233,7 +227,6 @@ function stopThemeWatchers() {
 
 onMounted(() => { render(); startThemeWatchers() })
 watch(() => props.spec, render, { deep: true })
-
 onBeforeUnmount(() => {
   stopThemeWatchers()
   if (view) {

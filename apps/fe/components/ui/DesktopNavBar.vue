@@ -29,8 +29,6 @@
         <button class="btn btn-sm btn-ghost" @click="toggleDarkMode" aria-label="Toggle dark mode">
           Dark mode
         </button>
-        <Icon name="tabler:dots-vertical" class="text-lg" />
-        <NuxtLink to="/stats" class="btn btn-sm btn-primary">Open Stats</NuxtLink>
       </div>
     </div>
   </nav>
@@ -46,7 +44,6 @@ const items = [
   { to: '/', label: 'Home', icon: 'tabler:home-2' },
   { to: '/explore', label: 'Explore', icon: 'tabler:compass' },
   { to: '/stats', label: 'Stats', icon: 'tabler:chart-line' },
-  { to: '/profile', label: 'Profile', icon: 'tabler:user' }
 ]
 
 function applyTheme(theme: string) {

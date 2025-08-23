@@ -1,1 +1,1 @@
-export { default } from "file:///C:/Users/StretzS/inequality/apps/fe/node_modules/.pnpm/@nuxt+vite-builder@3.18.1_@_0936680ad7d2d611e854eac509a15dbe/node_modules/@nuxt/vite-builder/dist/runtime/vite-node.mjs"
+export { default } from "file:///C:/Users/StretzS/inequality/apps/fe/node_modules/.pnpm/@nuxt+vite-builder@3.18.1_@types+node@24.3.0_magicast@0.3.5_rollup@4.47.1_terser@5.43.1_types_hbkovbqsmhfu2zfebbcisizb4y/node_modules/@nuxt/vite-builder/dist/runtime/vite-node.mjs"

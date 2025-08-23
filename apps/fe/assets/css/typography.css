@@ -1,0 +1,30 @@
+/* assets/css/typography.css */
+:root {
+  --max-prose: 70ch;
+}
+
+main article {
+  line-height: 1.6;
+}
+
+main article :is(p, ul, ol, pre, blockquote) {
+  max-width: var(--max-prose);
+}
+
+main article p {
+  margin-block: .5rem 0;
+}
+
+main article ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+}
+
+main article ol {
+  list-style: decimal;
+  padding-left: 1.25rem;
+}
+
+h1, h2, h3 {
+  scroll-margin-top: 6rem;
+}

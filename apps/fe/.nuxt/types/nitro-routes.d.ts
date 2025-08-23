@@ -3,14 +3,23 @@ import type { Serialize, Simplify } from "nitropack/types";
 declare module "nitropack/types" {
   type Awaited<T> = T extends PromiseLike<infer U> ? Awaited<U> : T
   interface InternalApi {
+    '/api/eurostat/:dataset': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/eurostat/[dataset].get').default>>>>
+    }
+    '/api/owid/:series': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/owid/[series].get').default>>>>
+    }
+    '/api/wid/:series': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/wid/[series].get').default>>>>
+    }
     '/__nuxt_error': {
-      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/.pnpm/nuxt@3.18.1_@netlify+blobs@_3061ad7200f12ee0c00e8e25155178c8/node_modules/nuxt/dist/core/runtime/nitro/handlers/renderer').default>>>>
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/.pnpm/nuxt@3.18.1_@netlify+blobs@9.1.2_@parcel+watcher@2.5.1_@types+node@24.3.0_@vue+compiler-sfc@3_lrtovvn3txkimok6ulmv2v5h2u/node_modules/nuxt/dist/core/runtime/nitro/handlers/renderer').default>>>>
     }
     '/__nuxt_island/**': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/#internal/nuxt/island-renderer').default>>>>
     }
     '/_ipx/**': {
-      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/.pnpm/@nuxt+image@1.11.0_@netlify_4fc1967604e9f538ece6b33e3379d00d/node_modules/@nuxt/image/dist/runtime/ipx').default>>>>
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/.pnpm/@nuxt+image@1.11.0_@netlify+blobs@9.1.2_db0@0.3.2_ioredis@5.7.0_magicast@0.3.5/node_modules/@nuxt/image/dist/runtime/ipx').default>>>>
     }
   }
 }
