@@ -1,0 +1,42 @@
+{
+    "resources": {
+        "wid": {
+            "title": "World Inequality Database (WID)",
+            "description": "Größte offene Datenbank zur globalen Ungleichheit, gegründet von Thomas Piketty, Emmanuel Saez und Gabriel Zucman."
+        },
+        "oecd-idd": {
+            "title": "OECD Einkommensverteilungsdatenbank",
+            "description": "Länderübergreifende Daten zu Einkommensungleichheit und Armut in den OECD-Mitgliedstaaten."
+        },
+        "lis": {
+            "title": "Luxembourg Income Study (LIS) Datenbank",
+            "description": "Mikrodatenarchiv zu Einkommen, Vermögen, Ausgaben und Erwerbstätigkeit von Haushalten."
+        },
+        "soep": {
+            "title": "Sozio-oekonomisches Panel (SOEP)",
+            "description": "Längsschnittbefragung von Haushalten in Deutschland seit 1984, mit Daten zu Einkommen, Vermögen, Arbeit und Lebensbedingungen."
+        },
+        "inkar": {
+            "title": "INKAR – Indikatoren und Karten zur Raum- und Stadtentwicklung",
+            "description": "Interaktive Karten zu Einkommen, Armut, Bildung und Arbeitsmarkt in Deutschland bis auf Kreisebene."
+        },
+        "genesis": {
+            "title": "GENESIS-Online (Destatis)",
+            "description": "Amtliche deutsche Datenbank mit regionalen Statistiken zu Einkommen, Armut und sozialen Bedingungen."
+        },
+        "armutsbericht": {
+            "title": "Armuts- und Reichtumsbericht der Bundesregierung",
+            "description": "Regelmäßiger Bericht der Bundesregierung über Armut und Reichtum in Deutschland."
+        },
+        "wsi": {
+            "title": "WSI Verteilungsberichte",
+            "description": "Regelmäßige Analysen zur Ungleichheit und Verteilung vom WSI der Hans-Böckler-Stiftung."
+        }
+    },
+    "categories": {
+        "article": "Wissenschaftliche Artikel",
+        "database": "Datenbanken",
+        "tool": "Werkzeuge & Dashboards",
+        "api": "Öffentliche APIs"
+    }
+}

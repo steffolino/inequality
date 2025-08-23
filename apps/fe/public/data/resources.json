@@ -1,0 +1,800 @@
+[
+    {
+        "id": "gini-project",
+        "title": "GINI Project (Growing Inequalities’ Impacts)",
+        "url": "http://gini-research.org/",
+        "type": "article",
+        "tags": [
+            "gini",
+            "project",
+            "inequality",
+            "eu",
+            "comparative",
+            "policy",
+            "distribution",
+            "income",
+            "wealth",
+            "impact"
+        ],
+        "description": "EU-funded research project analyzing the economic and social impacts of inequality."
+    },
+    {
+        "id": "ilo-wage",
+        "title": "International Labour Organization (ILO) – Wage Inequality",
+        "url": "https://www.ilo.org/global/statistics-and-databases/lang--en/index.htm",
+        "type": "database",
+        "tags": [
+            "ilo",
+            "wages",
+            "income",
+            "inequality",
+            "labor-market",
+            "employment",
+            "statistics",
+            "global",
+            "comparative",
+            "longitudinal"
+        ],
+        "description": "ILO statistics on wage inequality and labor market conditions worldwide."
+    },
+    {
+        "id": "unu-wider",
+        "title": "UNU-WIDER Inequality Data Portal",
+        "url": "https://www.wider.unu.edu/inequality-database",
+        "type": "database",
+        "tags": [
+            "unu-wider",
+            "inequality",
+            "income",
+            "wealth",
+            "global",
+            "comparative",
+            "open-data",
+            "distribution",
+            "policy",
+            "development"
+        ],
+        "description": "Data portal by UNU-WIDER with global inequality datasets and research resources."
+    },
+    {
+        "id": "gcip",
+        "title": "Global Consumption and Income Project (GCIP)",
+        "url": "http://gcip.info/",
+        "type": "database",
+        "tags": [
+            "income",
+            "consumption",
+            "inequality",
+            "global",
+            "distribution",
+            "statistics",
+            "poverty",
+            "comparative",
+            "dataset",
+            "household"
+        ],
+        "description": "Open database on global income and consumption inequality over time."
+    },
+    {
+        "id": "wb-mobility",
+        "title": "World Bank Global Database on Intergenerational Mobility",
+        "url": "https://www.worldbank.org/en/topic/poverty/brief/global-database-on-intergenerational-mobility",
+        "type": "database",
+        "tags": [
+            "world-bank",
+            "mobility",
+            "inequality",
+            "education",
+            "intergenerational",
+            "comparative",
+            "global",
+            "statistics",
+            "policy",
+            "longitudinal"
+        ],
+        "description": "World Bank database on intergenerational mobility and inequality of opportunity."
+    },
+    {
+        "id": "oecd-taxbenefit",
+        "title": "OECD Tax and Benefit Policies Database",
+        "url": "https://www.oecd.org/social/tax-benefit-policy.htm",
+        "type": "database",
+        "tags": [
+            "oecd",
+            "tax",
+            "benefits",
+            "redistribution",
+            "inequality",
+            "income",
+            "comparative",
+            "policy",
+            "statistics",
+            "household"
+        ],
+        "description": "OECD database analyzing tax and benefit policies and their impact on inequality."
+    },
+    {
+        "id": "owid-gini",
+        "title": "Our World in Data: Gini Coefficient Explorer",
+        "url": "https://ourworldindata.org/grapher/gini-coefficient",
+        "type": "tool",
+        "tags": [
+            "owid",
+            "gini",
+            "income",
+            "wealth",
+            "distribution",
+            "comparative",
+            "visualization",
+            "interactive",
+            "longitudinal",
+            "statistics"
+        ],
+        "description": "Interactive OWID visualization of Gini coefficients across countries and over time."
+    },
+    {
+        "id": "wir2022",
+        "title": "World Inequality Report 2022",
+        "url": "https://wir2022.wid.world/",
+        "type": "article",
+        "tags": [
+            "wid",
+            "report",
+            "global",
+            "inequality",
+            "wealth",
+            "income",
+            "distribution",
+            "piketty",
+            "zucman",
+            "policy"
+        ],
+        "description": "Comprehensive inequality report by the World Inequality Lab, covering global trends."
+    },
+    {
+        "id": "undp-hdr",
+        "title": "United Nations Human Development Reports",
+        "url": "https://hdr.undp.org/",
+        "type": "article",
+        "tags": [
+            "undp",
+            "human-development",
+            "inequality",
+            "poverty",
+            "global",
+            "education",
+            "health",
+            "statistics",
+            "policy",
+            "report"
+        ],
+        "description": "UNDP’s Human Development Reports analyzing inequality, health, and education."
+    },
+    {
+        "id": "bertelsmann-sozialatlas",
+        "title": "Bertelsmann Stiftung Sozialatlas",
+        "url": "https://www.sozialatlas.de/",
+        "type": "tool",
+        "tags": [
+            "germany",
+            "bertelsmann",
+            "regional",
+            "inequality",
+            "poverty",
+            "income",
+            "visualization",
+            "education",
+            "health",
+            "social"
+        ],
+        "description": "Interactive regional data and visualizations on inequality and social conditions in Germany."
+    },
+    {
+        "id": "dgb-verteilungsbericht",
+        "title": "DGB Verteilungsbericht",
+        "url": "https://www.dgb.de/verteilungsbericht",
+        "type": "article",
+        "tags": [
+            "germany",
+            "dgb",
+            "labor",
+            "income",
+            "inequality",
+            "union",
+            "poverty",
+            "wealth",
+            "policy",
+            "report"
+        ],
+        "description": "Distribution and inequality reports published by the German Trade Union Confederation."
+    },
+    {
+        "id": "diw-inequality",
+        "title": "DIW Berlin – Income and Wealth Inequality",
+        "url": "https://www.diw.de/de/diw_02.c.221178.de/thema_einkommen_vermoegen.html",
+        "type": "article",
+        "tags": [
+            "germany",
+            "diw",
+            "inequality",
+            "income",
+            "wealth",
+            "poverty",
+            "policy",
+            "statistics",
+            "longitudinal",
+            "research"
+        ],
+        "description": "Research and reports by DIW Berlin on income and wealth inequality in Germany."
+    },
+    {
+        "id": "destatis-income",
+        "title": "Destatis – Income, Receipts, and Expenditure",
+        "url": "https://www.destatis.de/EN/Themes/Society-Environment/Income-Receipts-Expenditure/_node.html",
+        "type": "database",
+        "tags": [
+            "germany",
+            "destatis",
+            "income",
+            "poverty",
+            "inequality",
+            "statistics",
+            "household",
+            "consumption",
+            "official",
+            "data"
+        ],
+        "description": "Official statistics on household income, receipts, and expenditure in Germany."
+    },
+    {
+        "id": "eurostat-silc",
+        "title": "Eurostat: Income and Living Conditions (EU-SILC)",
+        "url": "https://ec.europa.eu/eurostat/web/income-and-living-conditions",
+        "type": "database",
+        "tags": [
+            "eu",
+            "eurostat",
+            "living-conditions",
+            "income",
+            "poverty",
+            "social-exclusion",
+            "statistics",
+            "gini",
+            "regional",
+            "longitudinal"
+        ],
+        "description": "European survey data on income, poverty, social exclusion, and living conditions."
+    },
+    {
+        "id": "gini-project",
+        "title": "GINI Project (Growing Inequalities’ Impacts)",
+        "url": "http://gini-research.org/",
+        "type": "article",
+        "tags": [
+            "gini",
+            "project",
+            "inequality",
+            "eu",
+            "comparative",
+            "policy",
+            "distribution",
+            "income",
+            "wealth",
+            "impact"
+        ],
+        "description": "EU-funded research project analyzing the economic and social impacts of inequality."
+    },
+    {
+        "id": "ilo-wage",
+        "title": "International Labour Organization (ILO) – Wage Inequality",
+        "url": "https://www.ilo.org/global/statistics-and-databases/lang--en/index.htm",
+        "type": "database",
+        "tags": [
+            "ilo",
+            "wages",
+            "income",
+            "inequality",
+            "labor-market",
+            "employment",
+            "statistics",
+            "global",
+            "comparative",
+            "longitudinal"
+        ],
+        "description": "ILO statistics on wage inequality and labor market conditions worldwide."
+    },
+    {
+        "id": "unu-wider",
+        "title": "UNU-WIDER Inequality Data Portal",
+        "url": "https://www.wider.unu.edu/inequality-database",
+        "type": "database",
+        "tags": [
+            "unu-wider",
+            "inequality",
+            "income",
+            "wealth",
+            "global",
+            "comparative",
+            "open-data",
+            "distribution",
+            "policy",
+            "development"
+        ],
+        "description": "Data portal by UNU-WIDER with global inequality datasets and research resources."
+    },
+    {
+        "id": "gcip",
+        "title": "Global Consumption and Income Project (GCIP)",
+        "url": "http://gcip.info/",
+        "type": "database",
+        "tags": [
+            "income",
+            "consumption",
+            "inequality",
+            "global",
+            "distribution",
+            "statistics",
+            "poverty",
+            "comparative",
+            "dataset",
+            "household"
+        ],
+        "description": "Open database on global income and consumption inequality over time."
+    },
+    {
+        "id": "wb-mobility",
+        "title": "World Bank Global Database on Intergenerational Mobility",
+        "url": "https://www.worldbank.org/en/topic/poverty/brief/global-database-on-intergenerational-mobility",
+        "type": "database",
+        "tags": [
+            "world-bank",
+            "mobility",
+            "inequality",
+            "education",
+            "intergenerational",
+            "comparative",
+            "global",
+            "statistics",
+            "policy",
+            "longitudinal"
+        ],
+        "description": "World Bank database on intergenerational mobility and inequality of opportunity."
+    },
+    {
+        "id": "oecd-taxbenefit",
+        "title": "OECD Tax and Benefit Policies Database",
+        "url": "https://www.oecd.org/social/tax-benefit-policy.htm",
+        "type": "database",
+        "tags": [
+            "oecd",
+            "tax",
+            "benefits",
+            "redistribution",
+            "inequality",
+            "income",
+            "comparative",
+            "policy",
+            "statistics",
+            "household"
+        ],
+        "description": "OECD database analyzing tax and benefit policies and their impact on inequality."
+    },
+    {
+        "id": "owid-gini",
+        "title": "Our World in Data: Gini Coefficient Explorer",
+        "url": "https://ourworldindata.org/grapher/gini-coefficient",
+        "type": "tool",
+        "tags": [
+            "owid",
+            "gini",
+            "income",
+            "wealth",
+            "distribution",
+            "comparative",
+            "visualization",
+            "interactive",
+            "longitudinal",
+            "statistics"
+        ],
+        "description": "Interactive OWID visualization of Gini coefficients across countries and over time."
+    },
+    {
+        "id": "undp-hdr",
+        "title": "United Nations Human Development Reports",
+        "url": "https://hdr.undp.org/",
+        "type": "article",
+        "tags": [
+            "undp",
+            "human-development",
+            "inequality",
+            "poverty",
+            "global",
+            "education",
+            "health",
+            "statistics",
+            "policy",
+            "report"
+        ],
+        "description": "UNDP’s Human Development Reports analyzing inequality, health, and education."
+    },
+    {
+        "id": "bertelsmann-sozialatlas",
+        "title": "Bertelsmann Stiftung Sozialatlas",
+        "url": "https://www.sozialatlas.de/",
+        "type": "tool",
+        "tags": [
+            "germany",
+            "bertelsmann",
+            "regional",
+            "inequality",
+            "poverty",
+            "income",
+            "visualization",
+            "education",
+            "health",
+            "social"
+        ],
+        "description": "Interactive regional data and visualizations on inequality and social conditions in Germany."
+    },
+    {
+        "id": "dgb-verteilungsbericht",
+        "title": "DGB Verteilungsbericht",
+        "url": "https://www.dgb.de/verteilungsbericht",
+        "type": "article",
+        "tags": [
+            "germany",
+            "dgb",
+            "labor",
+            "income",
+            "inequality",
+            "union",
+            "poverty",
+            "wealth",
+            "policy",
+            "report"
+        ],
+        "description": "Distribution and inequality reports published by the German Trade Union Confederation."
+    },
+    {
+        "id": "diw-inequality",
+        "title": "DIW Berlin – Income and Wealth Inequality",
+        "url": "https://www.diw.de/de/diw_02.c.221178.de/thema_einkommen_vermoegen.html",
+        "type": "article",
+        "tags": [
+            "germany",
+            "diw",
+            "inequality",
+            "income",
+            "wealth",
+            "poverty",
+            "policy",
+            "statistics",
+            "longitudinal",
+            "research"
+        ],
+        "description": "Research and reports by DIW Berlin on income and wealth inequality in Germany."
+    },
+    {
+        "id": "destatis-income",
+        "title": "Destatis – Income, Receipts, and Expenditure",
+        "url": "https://www.destatis.de/EN/Themes/Society-Environment/Income-Receipts-Expenditure/_node.html",
+        "type": "database",
+        "tags": [
+            "germany",
+            "destatis",
+            "income",
+            "poverty",
+            "inequality",
+            "statistics",
+            "household",
+            "consumption",
+            "official",
+            "data"
+        ],
+        "description": "Official statistics on household income, receipts, and expenditure in Germany."
+    },
+    {
+        "id": "eurostat-silc",
+        "title": "Eurostat: Income and Living Conditions (EU-SILC)",
+        "url": "https://ec.europa.eu/eurostat/web/income-and-living-conditions",
+        "type": "database",
+        "tags": [
+            "eu",
+            "eurostat",
+            "living-conditions",
+            "income",
+            "poverty",
+            "social-exclusion",
+            "statistics",
+            "gini",
+            "regional",
+            "longitudinal"
+        ],
+        "description": "European survey data on income, poverty, social exclusion, and living conditions."
+    },
+    {
+        "id": "eurostat-api",
+        "title": "Eurostat JSON API",
+        "url": "https://ec.europa.eu/eurostat/web/json-and-unicode-web-services",
+        "type": "api",
+        "tags": [
+            "eu",
+            "api",
+            "statistics",
+            "json",
+            "income",
+            "poverty",
+            "gini",
+            "demographics",
+            "data-service",
+            "open-access"
+        ],
+        "description": "Eurostat API for programmatic access to EU statistics on income, poverty, and inequality."
+    },
+    {
+        "id": "oecd-regional",
+        "title": "OECD Regional Inequality Indicators",
+        "url": "https://www.oecd.org/regional/regional-statistics/",
+        "type": "database",
+        "tags": [
+            "oecd",
+            "regional",
+            "inequality",
+            "income",
+            "productivity",
+            "education",
+            "health",
+            "housing",
+            "comparative",
+            "policy"
+        ],
+        "description": "OECD database with inequality and well-being indicators across regions."
+    },
+    {
+        "id": "world-bank-inequality",
+        "title": "World Bank Inequality Indicators",
+        "url": "https://databank.worldbank.org/source/poverty-and-inequality-platform",
+        "type": "database",
+        "tags": [
+            "world-bank",
+            "inequality",
+            "poverty",
+            "income",
+            "distribution",
+            "global",
+            "statistics",
+            "longitudinal",
+            "policy",
+            "open-data"
+        ],
+        "description": "World Bank’s Poverty and Inequality Platform with harmonized household survey data."
+    },
+    {
+        "id": "oecd-gender",
+        "title": "OECD Gender Data Portal – Pay & Inequality",
+        "url": "https://www.oecd.org/gender/data/",
+        "type": "database",
+        "tags": [
+            "oecd",
+            "gender",
+            "pay-gap",
+            "inequality",
+            "labor-market",
+            "employment",
+            "comparative",
+            "statistics",
+            "policy",
+            "social"
+        ],
+        "description": "OECD indicators on gender inequality, including pay gaps and employment."
+    },
+    {
+        "id": "un-women-gender",
+        "title": "UN Women Gender Equality Data",
+        "url": "https://data.unwomen.org/",
+        "type": "database",
+        "tags": [
+            "un",
+            "gender",
+            "inequality",
+            "poverty",
+            "labor",
+            "education",
+            "health",
+            "violence",
+            "statistics",
+            "policy"
+        ],
+        "description": "UN Women data portal with gender inequality and social indicators."
+    },
+    {
+        "id": "oecd-pisa",
+        "title": "OECD PISA Inequality in Education",
+        "url": "https://www.oecd.org/pisa/",
+        "type": "database",
+        "tags": [
+            "oecd",
+            "education",
+            "inequality",
+            "pisa",
+            "students",
+            "global",
+            "comparative",
+            "statistics",
+            "skills",
+            "policy"
+        ],
+        "description": "OECD PISA database with insights on education inequality across countries."
+    },
+    {
+        "id": "unesco-education",
+        "title": "UNESCO Education Inequality Data",
+        "url": "https://uis.unesco.org/",
+        "type": "database",
+        "tags": [
+            "unesco",
+            "education",
+            "inequality",
+            "global",
+            "statistics",
+            "regional",
+            "schooling",
+            "literacy",
+            "policy",
+            "data"
+        ],
+        "description": "UNESCO Institute for Statistics provides global education inequality data."
+    },
+    {
+        "id": "ifw-kiel",
+        "title": "IfW Kiel – Inequality Research",
+        "url": "https://www.ifw-kiel.de/",
+        "type": "article",
+        "tags": [
+            "germany",
+            "inequality",
+            "research",
+            "income",
+            "wealth",
+            "policy",
+            "economics",
+            "kiel",
+            "report",
+            "statistics"
+        ],
+        "description": "Research from the Kiel Institute for the World Economy on inequality and distribution."
+    },
+    {
+        "id": "ifo-institute",
+        "title": "ifo Institute – Inequality Studies",
+        "url": "https://www.ifo.de/",
+        "type": "article",
+        "tags": [
+            "germany",
+            "ifo",
+            "inequality",
+            "income",
+            "wealth",
+            "policy",
+            "research",
+            "statistics",
+            "economics",
+            "labor"
+        ],
+        "description": "Research by the ifo Institute (Munich) on inequality, taxation, and labor markets."
+    },
+    {
+        "id": "hbs-datenportal",
+        "title": "Hans-Böckler Stiftung Datenportal",
+        "url": "https://www.boeckler.de/de/wsi-datenportal.htm",
+        "type": "database",
+        "tags": [
+            "germany",
+            "hbs",
+            "inequality",
+            "labor",
+            "income",
+            "statistics",
+            "union",
+            "policy",
+            "distribution",
+            "social"
+        ],
+        "description": "Data portal with German inequality and labor statistics from Hans-Böckler Stiftung."
+    },
+    {
+        "id": "unesco-gem",
+        "title": "UNESCO Global Education Monitoring Report",
+        "url": "https://www.unesco.org/gem-report/en",
+        "type": "article",
+        "tags": [
+            "unesco",
+            "education",
+            "inequality",
+            "global",
+            "report",
+            "policy",
+            "statistics",
+            "longitudinal",
+            "comparative",
+            "research"
+        ],
+        "description": "UNESCO annual report monitoring inequality in global education."
+    },
+    {
+        "id": "world-bank-wealth",
+        "title": "World Bank Global Wealth Data",
+        "url": "https://databank.worldbank.org/source/global-financial-development",
+        "type": "database",
+        "tags": [
+            "world-bank",
+            "wealth",
+            "inequality",
+            "global",
+            "finance",
+            "distribution",
+            "statistics",
+            "policy",
+            "development",
+            "open-data"
+        ],
+        "description": "World Bank financial development indicators, including wealth inequality."
+    },
+    {
+        "id": "ilo-education",
+        "title": "ILO Education and Skills Inequality",
+        "url": "https://www.ilo.org/global/statistics-and-databases/",
+        "type": "database",
+        "tags": [
+            "ilo",
+            "education",
+            "skills",
+            "inequality",
+            "training",
+            "labor",
+            "employment",
+            "policy",
+            "statistics",
+            "comparative"
+        ],
+        "description": "ILO data on inequality in skills and education access."
+    },
+    {
+        "id": "oecd-employment",
+        "title": "OECD Employment and Inequality Indicators",
+        "url": "https://stats.oecd.org/",
+        "type": "database",
+        "tags": [
+            "oecd",
+            "employment",
+            "inequality",
+            "labor",
+            "income",
+            "social",
+            "statistics",
+            "comparative",
+            "policy",
+            "dataset"
+        ],
+        "description": "OECD statistics on employment and inequality indicators."
+    },
+    {
+        "id": "ecb-hfcs",
+        "title": "European Central Bank – Household Finance and Consumption Survey",
+        "url": "https://www.ecb.europa.eu/stats/money/wealth/hfcs/html/index.en.html",
+        "type": "database",
+        "tags": [
+            "ecb",
+            "eu",
+            "wealth",
+            "household",
+            "inequality",
+            "finance",
+            "consumption",
+            "survey",
+            "statistics",
+            "policy"
+        ],
+        "description": "ECB survey on household wealth and inequality in the euro area."
+    }
+]

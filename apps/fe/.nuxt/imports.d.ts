@@ -33,4 +33,5 @@ export { useApi, SeriesParams } from '../composables/useApi';
 export { fetchEurostatTidy, firstLast, fetchWidTidy, useInequalityData, EurostatRow } from '../composables/useInequalityData';
 export { useStatsState } from '../composables/useStatsState';
 export { useImage } from '../node_modules/.pnpm/@nuxt+image@1.11.0_@netlify+blobs@9.1.2_db0@0.3.2_ioredis@5.7.0_magicast@0.3.5/node_modules/@nuxt/image/dist/runtime/composables';
+export { useNuxtDevTools } from '../node_modules/.pnpm/@nuxt+devtools@2.6.3_vite@7.1.3_@types+node@24.3.0_jiti@2.5.1_terser@5.43.1_yaml@2.8.1__vue@3.5.19_typescript@5.9.2_/node_modules/@nuxt/devtools/dist/runtime/use-nuxt-devtools';
 export { definePageMeta } from '../node_modules/.pnpm/nuxt@3.18.1_@netlify+blobs@9.1.2_@parcel+watcher@2.5.1_@types+node@24.3.0_@vue+compiler-sfc@3_lrtovvn3txkimok6ulmv2v5h2u/node_modules/nuxt/dist/pages/runtime/composables';

@@ -1,16 +1,20 @@
 <template>
-  <section class="relative overflow-hidden">
-    <!-- Hero -->
-     <UiHeroStrip
-      eyebrow="Mobile‑first insights"
-      title="See inequality clearly—fast."
-      subtitle="Explore transparent statistics, compare regions, and share views."
+    <section
+      class="relative overflow-hidden bg-gradient-to-r from-primary/10 via-accent/5 to-secondary/10 py-4"
     >
-      <template #actions>
-        <NuxtLink to="/stats" class="btn btn-primary btn-lg no-underline">Go to Statistics</NuxtLink>
-        <NuxtLink to="/explore" class="btn btn-ghost btn-lg no-underline">Explore</NuxtLink>
-      </template>
-    </UiHeroStrip>
+      <div class="max-w-6xl mx-auto px-4 text-center space-y-6">
+        <UiHeroStrip
+          eyebrow="Mobile‑first insights"
+          title="See inequality clearly—fast."
+          subtitle="Explore transparent statistics, compare regions, and share views."
+        >
+          <template #actions>
+            <NuxtLink to="/stats" class="btn btn-primary btn-lg no-underline">Go to Statistics</NuxtLink>
+            <NuxtLink to="/explore" class="btn btn-ghost btn-lg no-underline">Explore</NuxtLink>
+          </template>
+        </UiHeroStrip>
+      </div>
+    
 
     <!-- Features -->
     <div id="features" class="border-t border-base-300/60 bg-base-100/60">

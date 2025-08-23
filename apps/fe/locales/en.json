@@ -1,0 +1,42 @@
+{
+    "resources": {
+        "wid": {
+            "title": "World Inequality Database (WID)",
+            "description": "Largest open database on global inequality, founded by Thomas Piketty, Emmanuel Saez, and Gabriel Zucman."
+        },
+        "oecd-idd": {
+            "title": "OECD Income Distribution Database",
+            "description": "Cross-country data on income inequality and poverty for OECD member states."
+        },
+        "lis": {
+            "title": "Luxembourg Income Study (LIS) Database",
+            "description": "Microdata archive for household income, wealth, expenditure, and labor statistics."
+        },
+        "soep": {
+            "title": "Socio-Economic Panel (SOEP)",
+            "description": "Longitudinal household survey in Germany since 1984, covering income, wealth, labor, and living conditions."
+        },
+        "inkar": {
+            "title": "INKAR – Indicators and Maps for Spatial and Urban Development",
+            "description": "Interactive maps on income, poverty, education, and labor market in Germany down to district level."
+        },
+        "genesis": {
+            "title": "GENESIS-Online (Destatis)",
+            "description": "Official German database with regional statistics on income, poverty, and social conditions."
+        },
+        "armutsbericht": {
+            "title": "Poverty and Wealth Report of the German Federal Government",
+            "description": "Regular report by the German federal government on poverty and wealth distribution."
+        },
+        "wsi": {
+            "title": "WSI Distribution Reports",
+            "description": "Regular inequality and distribution reports by the Hans-Böckler Foundation."
+        }
+    },
+    "categories": {
+        "article": "Scientific Articles",
+        "database": "Databases",
+        "tool": "Tools & Dashboards",
+        "api": "Public APIs"
+    }
+}

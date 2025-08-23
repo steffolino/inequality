@@ -1,207 +1,283 @@
 <template>
   <div class="min-h-dvh bg-base-100 text-base-content">
     <main id="main" class="mx-auto max-w-6xl px-4 py-8 space-y-8">
-      <!-- Breadcrumb / Title -->
-      <header class="space-y-2">
-        <p class="text-xs opacity-70">
-          <NuxtLink to="/" class="link link-hover">Home</NuxtLink> / Statistics
-        </p>
-        <h1 class="text-3xl font-extrabold tracking-tight">Statistics</h1>
-        <p class="text-base-content/70 max-w-prose">
-          A guided overview of inequality in plain language. Start with the quick summary, then see general and personal
-          outcomes. Hover the <span class="font-semibold">?</span> icons for explanations.
-        </p>
-      </header>
+   <section
+      class="relative overflow-hidden bg-gradient-to-r from-primary/10 via-accent/5 to-secondary/10 py-4"
+    >
+      <div class="max-w-6xl mx-auto px-4 text-center space-y-6">
+        <UiHeroStrip
+          title="Stats & Simulations"
+          subtitle="Explore interactive charts and simulate policy impacts on inequality."
+        />
+      </div>
+    </section>
 
-      <!-- Primary controls -->
-      <section class="rounded-2xl ring-1 ring-base-300/70 bg-base-100 p-4">
-        <div class="flex flex-wrap gap-3 items-end">
+      <!-- CONTROLS -->
+      <section class="rounded-2xl ring-1 ring-base-300/70 bg-base-100 p-4 space-y-4">
+        <h2 class="text-lg font-bold uppercase tracking-wide text-base-content/70">Controls</h2>
+        <p class="text-sm opacity-70">Choose what data and scenario to display.</p>
+
+        <div class="flex flex-wrap gap-4 items-end">
+          <!-- Region -->
           <label class="form-control w-44">
-            <div class="label"><span class="label-text text-xs">Timeframe</span></div>
+            <div class="label"><span class="label-text text-xs">Region</span></div>
+            <select v-model="region" class="select select-sm select-bordered">
+              <option value="DE">Germany (total)</option>
+              <option value="DE-BD">Brandenburg</option>
+              <option value="DE-BY">Bayern</option>
+              <option value="DE-HB">Bremen</option>
+              <option value="DE-HE">Hessen</option>
+              <option value="DE-HH">Hamburg</option>
+              <option value="DE-PR">Rheinland-Pfalz</option>
+              <option value="DE-SN">Sachsen</option>
+              <option value="DE-WU">Baden-Württemberg</option>
+            </select>
+          </label>
+
+          <!-- Indicator -->
+          <label class="form-control w-64">
+            <div class="label"><span class="label-text text-xs">Indicator</span></div>
+            <select v-model="indicator" class="select select-sm select-bordered">
+              <option v-for="ind in filteredMetadata" :key="ind.variable" :value="ind.variable">
+                {{ ind.shortname }}
+              </option>
+            </select>
+          </label>
+
+          <!-- Years -->
+          <label class="form-control w-44">
+            <div class="label"><span class="label-text text-xs">Years</span></div>
             <select v-model="timeframe" class="select select-sm select-bordered">
-              <option value="2010-2025">2010–2025</option>
-              <option value="2000-2025">2000–2025</option>
-              <option value="1995-2025">1995–2025</option>
+              <option value="1950-2024">1950–2024</option>
+              <option value="1980-2024">1980–2024</option>
+              <option value="2000-2024">2000–2024</option>
             </select>
           </label>
 
-          <label class="form-control w-56">
-            <div class="label"><span class="label-text text-xs">Metric</span></div>
-            <select v-model="metric" class="select select-sm select-bordered">
-              <option value="gini">Gini (EU‑SILC)</option>
-              <option value="s8020">S80/S20 (EU‑SILC)</option>
-              <option value="arop">AROP 60% (EU‑SILC)</option>
-              <option value="arope">AROPE (EU‑SILC)</option>
+          <!-- Scenario -->
+          <label class="form-control w-44">
+            <div class="label"><span class="label-text text-xs">Scenario</span></div>
+            <select v-model="scenario" class="select select-sm select-bordered">
+              <option value="none">Original only</option>
+              <option value="cap">Wealth Cap</option>
+              <option value="tax">Wealth Tax</option>
             </select>
           </label>
+        </div>
 
-          <div class="ml-auto flex flex-wrap items-center gap-2 text-xs">
-            <span class="badge badge-outline">{{ prettyRegion('DE') }}</span>
-            <span class="badge badge-outline">{{ prettyRegion('EU27_2020') }}</span>
-            <span class="badge badge-ghost">{{ timeframe }}</span>
-          </div>
+        <!-- Indicator description -->
+        <div v-if="indicatorMeta" class="text-sm opacity-80 bg-base-200/60 p-3 rounded-xl">
+          {{ indicatorMeta.description }}
         </div>
       </section>
 
-      <!-- Main chart card -->
-      <section
-        v-if="rows.length"
-        class="rounded-2xl bg-base-100 ring-1 ring-base-300/70 shadow-sm overflow-hidden"
-      >
-        <div class="px-6 pt-5 pb-3 border-b border-base-300/60">
-          <h2 class="text-xl font-semibold">
-            {{ headline }}
-            <span class="ml-2 badge badge-ghost">{{ metricLabel }}</span>
-            <span class="ml-1 badge badge-outline">{{ prettyRegion('DE') }}</span>
-            <span class="ml-1 badge badge-outline">{{ prettyRegion('EU27_2020') }}</span>
-            <span class="ml-1 badge badge-outline">{{ timeframe }}</span>
-          </h2>
-        </div>
-        <div class="p-5">
-          <VegaLiteEmbed :spec="spec" :actions="{export:true, source:false, editor:false}" />
+      <!-- SIMULATION ASSUMPTIONS -->
+      <section v-if="scenario !== 'none'" class="rounded-2xl ring-1 ring-base-300/70 bg-base-100 p-4 space-y-4">
+        <h2 class="text-lg font-bold uppercase tracking-wide text-base-content/70">Simulation assumptions</h2>
+        <p class="text-sm opacity-70">Adjust these sliders to model policies like caps or taxes.</p>
 
-          <div class="mt-3 grid md:grid-cols-2 gap-4 text-sm">
-            <div class="rounded-xl bg-base-200/60 p-3">
-              <p class="font-semibold">How to read this</p>
-              <p class="opacity-80">
-                Each line shows the indicator for a region across your selected years. Higher Gini or S80/S20 =
-                higher inequality; higher AROP/AROPE = more people in poverty or social exclusion.
-              </p>
-            </div>
-            <div class="rounded-xl bg-base-200/60 p-3">
-              <p class="font-semibold">Sources & Methods</p>
-              <ul class="list-disc ml-5">
-                <li><a :href="links[datasetLinkKey]" target="_blank" class="link link-primary">Dataset page</a></li>
-                <li><a :href="links.method_eusilc" target="_blank" class="link link-primary">EU‑SILC methodology</a></li>
-              </ul>
-            </div>
-          </div>
+        <div v-if="scenario === 'cap'" class="form-control w-full">
+          <label class="label"><span class="label-text">Wealth Cap (Mio €)</span></label>
+          <input type="range" min="1" max="100" v-model="capValue" class="range range-primary" />
+          <div class="text-right text-xs opacity-70">{{ capValue }} Mio €</div>
+        </div>
+
+        <div v-if="scenario === 'tax'" class="form-control w-full">
+          <label class="label"><span class="label-text">Wealth Tax (%)</span></label>
+          <input type="range" min="0" max="50" v-model="taxRate" class="range range-secondary" />
+          <div class="text-right text-xs opacity-70">{{ taxRate }} %</div>
         </div>
       </section>
 
-      <!-- General Outcome (your existing component) -->
-      <OutcomeCard />
+      <!-- RESULTS -->
+      <section v-if="combinedRows.length" class="rounded-2xl bg-base-100 ring-1 ring-base-300/70 shadow-sm p-5">
+        <h2 class="text-lg font-bold uppercase tracking-wide text-base-content/70 mb-1">Results</h2>
+        <p class="text-sm opacity-70 mb-3">Compare original data with the chosen scenario.</p>
+        <h3 class="text-xl font-semibold mb-3">{{ headline }}</h3>
 
-      <!-- Personal Outcome (your existing component) -->
-      <PersonalEffectsCard />
-
-      <!-- Further info -->
-      <section class="rounded-2xl bg-base-100 ring-1 ring-base-300/70 shadow-sm p-5">
-        <h2 class="text-lg font-bold uppercase tracking-wide text-base-content/70">Further information</h2>
-        <ul class="list-disc ml-5 mt-2 space-y-1 text-sm">
-          <li><a :href="links.oecd_inequality" target="_blank" class="link link-primary">OECD — Income inequality indicators</a></li>
-          <li><a :href="links.wid_country_de" target="_blank" class="link link-primary">WID — Germany country page</a></li>
-          <li><a :href="links.iza_labour_2025" target="_blank" class="link link-primary">IZA — German labour market after the long boom (2025)</a></li>
-          <li><a :href="links.diw_wealth_2024" target="_blank" class="link link-primary">DIW — Wealth and its distribution in Germany, 1895–2021</a></li>
-        </ul>
+        <VegaLite :spec="spec" :actions="false" />
       </section>
+
+      <!-- PERSONAL OUTCOME -->
+      <section class="rounded-2xl bg-base-100 ring-1 ring-base-300/70 shadow-sm p-5 space-y-4">
+        <h2 class="text-lg font-bold uppercase tracking-wide text-base-content/70">Personal Outcome</h2>
+        <p class="text-sm opacity-70">Enter your own data to estimate personal effects under current and simulated policies.</p>
+
+        <div class="grid md:grid-cols-3 gap-4">
+          <label class="form-control">
+            <div class="label"><span class="label-text">Annual Income (€)</span></div>
+            <input v-model.number="personalIncome" type="number" class="input input-bordered" />
+          </label>
+          <label class="form-control">
+            <div class="label"><span class="label-text">Net Wealth (€)</span></div>
+            <input v-model.number="personalWealth" type="number" class="input input-bordered" />
+          </label>
+          <label class="form-control">
+            <div class="label"><span class="label-text">Region</span></div>
+            <select v-model="personalRegion" class="select select-bordered">
+              <option value="DE">Germany (total)</option>
+              <option value="DE-BY">Bayern</option>
+              <option value="DE-SN">Sachsen</option>
+              <!-- etc -->
+            </select>
+          </label>
+        </div>
+
+        <div class="bg-base-200/60 p-4 rounded-xl">
+          <p class="font-semibold">Your estimate:</p>
+          <p class="text-sm opacity-80">Current policy: {{ formatCurrency(personalOutcome.current) }}</p>
+          <p v-if="scenario!=='none'" class="text-sm opacity-80">Under scenario "{{ scenario }}": {{ formatCurrency(personalOutcome.simulated) }} (Δ {{ personalOutcome.diff }}%)</p>
+        </div>
+      </section>
+
     </main>
   </div>
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref, computed, watch } from 'vue'
+import { ref, computed, watchEffect } from 'vue'
+import { useFetch } from '#app'
+import VegaLite from '../components/charts/VegaLite.vue'
+import HeroStrip from '../components/ui/HeroStrip.vue'
 
-// ✅ use your existing components/paths
-import OutcomeCard from '@/components/stats/OutcomeCard.vue'
-import PersonalEffectsCard from '@/components/stats/PersonalEffectsCard.vue'
-import VegaLiteEmbed from '@/components/charts/VegaLiteEmbed.vue'
-import { useInequalityData } from '@/composables/useInequalityData'
+/** State */
+const region = ref('DE')
+const indicator = ref('')
+const timeframe = ref('2000-2024')
+const scenario = ref<'none' | 'cap' | 'tax'>('none')
+const capValue = ref(20) // Mio €
+const taxRate = ref(10)  // %
 
-// data access
-const { fetchEurostatTidy } = useInequalityData()
+/** Personal outcome state */
+const personalIncome = ref(40000)
+const personalWealth = ref(500000)
+const personalRegion = ref('DE')
 
-/** Links */
-const links = {
-  ilc_di12:   'https://ec.europa.eu/eurostat/databrowser/view/ilc_di12/default/table',
-  ilc_di11:   'https://ec.europa.eu/eurostat/databrowser/view/ilc_di11/default/table',
-  ilc_li02:   'https://ec.europa.eu/eurostat/databrowser/view/ilc_li02/default/table',
-  ilc_peps01: 'https://ec.europa.eu/eurostat/databrowser/view/ilc_peps01/default/table',
-  method_eusilc:   'https://ec.europa.eu/eurostat/statistics-explained/index.php/Living_conditions_in_Europe_-_income_distribution_and_income_inequality',
-  oecd_inequality: 'https://www.oecd.org/en/data/indicators/income-inequality.html',
-  wid_country_de:  'https://wid.world/country/germany/',
-  iza_labour_2025: 'https://docs.iza.org/dp17862.pdf',
-  diw_wealth_2024: 'https://www.diw.de/de/diw_01.c.933594.de/publikationen/diskussionspapiere/2024_2105/wealth_and_its_distribution_in_germany__1895-2021.html'
-}
-
-/** UI state */
-const timeframe = ref<'2010-2025'|'2000-2025'|'1995-2025'>('2000-2025')
-const metric = ref<'gini'|'s8020'|'arop'|'arope'>('gini')
-
-/** Data rows for the main chart */
-const rows = ref<any[]>([])
-
-/** Compute start year from timeframe */
-const startYear = computed(()=> Number(timeframe.value.split('-')[0]))
-
-/** Re-fetch whenever timeframe / metric changes */
-watch([timeframe, metric], () => loadMain(), { immediate: true })
-
-async function loadMain(){
-  rows.value = []
-  try {
-    if (metric.value === 'gini') {
-      const res = await fetchEurostatTidy({ dataset: 'ilc_di12', regions: ['DE','EU27_2020'], yearStart: startYear.value })
-      rows.value = res.rows ?? []
-    } else if (metric.value === 's8020') {
-      const res = await fetchEurostatTidy({ dataset: 'ilc_di11', regions: ['DE','EU27_2020'], yearStart: startYear.value })
-      rows.value = res.rows ?? []
-    } else if (metric.value === 'arop') {
-      const res = await fetchEurostatTidy({ dataset: 'ilc_li02', regions: ['DE','EU27_2020'], yearStart: startYear.value })
-      rows.value = res.rows ?? []
-    } else if (metric.value === 'arope') {
-      const res = await fetchEurostatTidy({ dataset: 'ilc_peps01', regions: ['DE','EU27_2020'], yearStart: startYear.value })
-      rows.value = res.rows ?? []
-    }
-  } catch (e) {
-    console.warn('Main stats load failed', e)
-    rows.value = []
+/** Metadata + indicator filtering */
+const metadata = ref<any[]>([])
+watchEffect(async () => {
+  const { data } = await useFetch(`/api/wid/metadata/${region.value}`)
+  metadata.value = data.value?.rows ?? []
+  if (!indicator.value && metadata.value.length) {
+    indicator.value = metadata.value[0].variable
   }
-}
-
-/** Headings & labels */
-const headline = computed(()=> {
-  const label = ({
-    gini: 'Income inequality (Gini)',
-    s8020: 'Income inequality (S80/S20)',
-    arop: 'At‑risk‑of‑poverty (AROP)',
-    arope: 'Poverty or social exclusion (AROPE)'
-  })[metric.value]
-  return `${label} in Germany vs EU`
 })
-const metricLabel = computed(()=> ({
-  gini: 'Gini (EU‑SILC)',
-  s8020: 'S80/S20',
-  arop: 'AROP 60%',
-  arope: 'AROPE'
-})[metric.value])
 
-/** Dataset link key to match the metric */
-const datasetLinkKey = computed(() => ({
-  gini: 'ilc_di12',
-  s8020: 'ilc_di11',
-  arop: 'ilc_li02',
-  arope: 'ilc_peps01'
-})[metric.value])
+const allowedIndicators = [
+  'shweal901i','shweal910i','shweal950i',
+  'sfiinct992','sptinct992','acaincj992'
+]
 
-/** Vega-Lite spec */
-const spec = computed(()=> ({
-  $schema:'https://vega.github.io/schema/vega-lite/v5.json',
-  description: metricLabel.value,
-  data:{ values: rows.value },
-  mark:{ type:'line', point:true, tooltip:true },
-  encoding:{
-    x:{ field:'year', type:'temporal', title:'Year' },
-    y:{ field:'value', type:'quantitative', title: metricLabel.value },
-    color:{ field:'region', type:'nominal', title:'Region' }
-  },
-  width:'container', height:320
-}))
+const filteredMetadata = computed(() => 
+  metadata.value.filter(m => allowedIndicators.includes(m.variable))
+)
 
-/** Helpers */
-function prettyRegion(code:string){
-  if (code==='DE') return 'Germany'
-  if (code.startsWith('EU')) return 'EU‑27'
-  return code
+const indicatorMeta = computed(() => 
+  filteredMetadata.value.find(m => m.variable === indicator.value)
+)
+
+/** Rows */
+const rows = ref<any[]>([])
+const scenarioRows = ref<any[]>([])
+
+watchEffect(async () => {
+  if (!indicator.value) return
+  const { data } = await useFetch(`/api/wid/${region.value}?indicator=${indicator.value}&yearStart=${timeframe.value.split('-')[0]}&yearEnd=${timeframe.value.split('-')[1]}`)
+  rows.value = data.value?.rows ?? []
+})
+
+/** Build scenario rows */
+watchEffect(() => {
+  if (!rows.value.length) return
+
+  if (scenario.value === 'cap') {
+    scenarioRows.value = rows.value.map(r => ({
+      ...r,
+      value: Math.min(r.value, capValue.value * 1_000_000),
+      dataType: 'Scenario'
+    }))
+  } else if (scenario.value === 'tax') {
+    scenarioRows.value = rows.value.map(r => ({
+      ...r,
+      value: r.value * (1 - taxRate.value / 100),
+      dataType: 'Scenario'
+    }))
+  } else {
+    scenarioRows.value = []
+  }
+})
+
+/** Merge */
+const combinedRows = computed(() => {
+  const orig = rows.value.map(r => ({ ...r, dataType: 'Original' }))
+  return [...orig, ...scenarioRows.value]
+})
+
+/** Headline */
+const headline = computed(() => {
+  return `${indicatorMeta.value?.shortname ?? indicator.value} in ${region.value}`
+})
+
+/** Chart type: line vs bar */
+const isShare = computed(() => {
+  const u = indicatorMeta.value?.unit?.toLowerCase() || ''
+  return u.includes('share') || u.includes('%')
+})
+
+/** VegaLite */
+const spec = computed(() => {
+  if (!combinedRows.value.length) return null
+
+  if (isShare.value) {
+    // bar chart for share/distribution
+    return {
+      $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+      data: { values: combinedRows.value },
+      mark: "bar",
+      encoding: {
+        x: { field: 'year', type: 'ordinal', axis: { labelAngle: -30 } },
+        xOffset: { field: 'dataType' },
+        y: { field: 'value', type: 'quantitative', title: indicatorMeta.value?.unit ?? '' },
+        color: { field: 'dataType', type: 'nominal', title: 'Data' }
+      },
+      width: 'container',
+      height: 320
+    }
+  }
+
+  // line chart default
+  return {
+    $schema: 'https://vega.github.io/schema/vega-lite/v5.json',
+    data: { values: combinedRows.value },
+    mark: { type: 'line', point: true },
+    encoding: {
+      x: { field: 'year', type: 'ordinal', axis: { labelAngle: -30 } },
+      y: { field: 'value', type: 'quantitative', title: indicatorMeta.value?.unit ?? '' },
+      color: { field: 'dataType', type: 'nominal', title: 'Data' },
+      detail: { field: 'region' }
+    },
+    width: 'container',
+    height: 320
+  }
+})
+
+/** Personal outcome calculation */
+const personalOutcome = computed(() => {
+  const current = personalIncome.value
+  let simulated = current
+
+  if (scenario.value === 'cap' && personalWealth.value > capValue.value * 1_000_000) {
+    simulated = current - 0.05 * current // simplistic cut effect
+  }
+  if (scenario.value === 'tax') {
+    simulated = current * (1 - taxRate.value / 100)
+  }
+
+  const diff = ((simulated - current) / current * 100).toFixed(1)
+  return { current, simulated, diff }
+})
+
+function formatCurrency(v:number){
+  return new Intl.NumberFormat('de-DE',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(v)
 }
 </script>

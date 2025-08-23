@@ -33,7 +33,7 @@
 </template>
 
 <script setup lang="ts">
-import { useStatsState } from '@/composables/useStatsState'
+import { useStatsState } from '../../composables/useStatsState'
 const { state, share } = useStatsState()
 defineEmits<{(e:'open-filters'):void}>()
 </script>

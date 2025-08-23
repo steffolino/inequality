@@ -9,8 +9,17 @@ declare module "nitropack/types" {
     '/api/owid/:series': {
       'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/owid/[series].get').default>>>>
     }
+    '/api/wid/:region': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/wid/[region]').default>>>>
+    }
     '/api/wid/:series': {
       'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/wid/[series].get').default>>>>
+    }
+    '/api/wid/metadata/:region': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/wid/metadata/[region]').default>>>>
+    }
+    '/api/wid/shares': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/wid/shares').default>>>>
     }
     '/__nuxt_error': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/.pnpm/nuxt@3.18.1_@netlify+blobs@9.1.2_@parcel+watcher@2.5.1_@types+node@24.3.0_@vue+compiler-sfc@3_lrtovvn3txkimok6ulmv2v5h2u/node_modules/nuxt/dist/core/runtime/nitro/handlers/renderer').default>>>>

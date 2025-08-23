@@ -14,8 +14,10 @@
     "@nuxtjs/tailwindcss": "^6.12.1",
     "csv-parse": "^6.1.0",
     "daisyui": "^4.12.14",
+    "fuse.js": "^7.1.0",
     "nuxt": "^3.12.4",
     "nuxt-icon": "^0.6.9",
+    "papaparse": "^5.5.3",
     "vega": "^5.30.0",
     "vega-embed": "^6.26.0",
     "vega-lite": "^5.20.1"
